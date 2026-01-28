@@ -1,30 +1,26 @@
-%%%%%%%%% search 'my note' to find note for some slides
 \documentclass[hyperref={bookmarks=false},aspectratio=169]{beamer}
-\usepackage[utf8]{inputenc} % Ensure LaTeX can correctly handle Chinese characters and other Unicode characters in the document
+\usepackage[utf8]{inputenc} 
 \usepackage{lipsum} % for nonumber footnote
-\usepackage[normalem]{ulem} % For strikethrough text
-\usepackage{colortbl}  % for \rowcolors
-\usepackage{xcolor}  % for \rowcolors
-%%%%%% Use Helvetica font
+\usepackage[normalem]{ulem} 
+\usepackage{colortbl}  
+\usepackage{xcolor}  
 \usepackage{helvet}  
-\renewcommand{\familydefault}{\sfdefault} % Set sans-serif font as the default font
-%%%%%% 
-%%% TIKZ diagram
+\renewcommand{\familydefault}{\sfdefault} 
+
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
-%%% TIKZ diagram
+
 %%%%%% for checkmark or xmark
 \usepackage{pifont}
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \newcommand{\cmark}{\textcolor{blue}{\ding{51}}}%
 \newcommand{\xmark}{\textcolor{red}{\ding{55}}}%
 %%%
-% ---------------For different institute
-% later if want change to another theme -> change color in .sty file 
+
 % ---------------  Define theme and color scheme  -----------------
 \usetheme[minimal]{FSU}  % 3 options: minimal (1st), sidebarleft, sidebarright
 \setbeamertemplate{footline}[frame number]     % pagenumber
-% ------------  Information on the title page  --------------------
+
 %----------------------Footnote
 \newcommand\blfootnote[1]{%
   \begingroup
@@ -43,8 +39,6 @@
 \subtitle{Subtitle}
 
 \author[Author]
-% \author[Xiaozhao Liu \& A]
-% {Mischief\inst{1} \and Managed\inst{2}}
 {Xiaozhao Liu\inst{1}}
 
 \institute[FSU]
@@ -53,10 +47,6 @@ Email: xl24@fsu.edu\\
 \inst{1}
   Department of Chemistry and Biochemistry\\
   Florida State University\\
-  % \and
-  % \inst{2}
-  % Department of Student Pranks\\
-  % California Institute of Technology
 }
 
 \date[\today]
@@ -64,29 +54,24 @@ Email: xl24@fsu.edu\\
 %--------------------------------------reference related
 % \usepackage[backend=biber, style=numeric, sorting=none]{biblatex}  % Sort references by citation order
 \usepackage[backend=biber, style=nature, sorting=none, doi=true, url=false]{biblatex}  % Nature format, with direct access to links
-\addbibresource{reference.bib} % reference file
+\addbibresource{reference.bib} 
 %------------------------------------------------------------
 \begin{document}
-% Creates title page
 \begin{frame}
   \titlepage
   \vspace*{-0.6cm}
   \begin{figure}[htpb]
       \begin{center}
         \includegraphics[width=1.8cm]{./figures/FSU logo.png}  
-        % \includegraphics[keepaspectratio, scale=0.02]{./figures/FSU logo.pn}
       \end{center}
   \end{figure}
 \end{frame}
 %------------------------------------------------------------
-% The next block of commands puts the table of contents at the 
-% beginning of each section and highlights the current section:
-
 \AtBeginSection[]
 {
   \begin{frame}
     \frametitle{Table of Contents}
-    \vspace{1em} % Adjust this value to increase or decrease the space
+    \vspace{1em} 
     \fontsize{10pt}{9pt}\selectfont    % Change font of table of contents before each section, size 12pt, line spacing 14pt
     \tableofcontents[currentsection]
   \end{frame}
@@ -94,14 +79,11 @@ Email: xl24@fsu.edu\\
 %---------   Table of contents after title page  ------------
 \begin{frame}[b]     %[t/c/b] for top/center/bottom alignment
 \frametitle{Table of Contents}
-\vspace{1em} % Adjust this value to increase or decrease the space
-\fontsize{10pt}{9pt}\selectfont    % Change font of table of contents at the beginning, size 12pt, line spacing 14pt
+\vspace{1em} 
+\fontsize{10pt}{9pt}\selectfont   
 \tableofcontents
 \end{frame}
-%---------------------------------------------------------
-% Usually part before here do not need change
-%---------------------------------------------------------
-%---------------------------------------------------------Section 1
+%-------------------------------------------------------
 \section{Introduction}
 %--------------------
 \begin{frame}
@@ -109,7 +91,7 @@ Email: xl24@fsu.edu\\
   \begin{columns}[t]       % Top-aligned columns
     \column{1\textwidth}
         \begin{center}
-          \begin{minipage}{1\textwidth} % Adjust the width as needed
+          \begin{minipage}{1\textwidth}
             \begin{itemize}
               \item 1
               \item 2
@@ -124,21 +106,21 @@ Email: xl24@fsu.edu\\
 \begin{frame}
   \frametitle{pic}
   \begin{columns}[c]  % top-aligned columns
-    \column{0.45\textwidth}  % Left column width
+    \column{0.45\textwidth}  
     \centering
     \includegraphics[height=3.6cm]{./figures/pic.jpg}
-    \vspace{0.2cm}  % Adjust space between image and text if needed
+    \vspace{0.2cm}  
     \\
     \small by XL
 
     \column{0.45\textwidth}  % Right column width
     \centering
     \includegraphics[height=4cm]{./figures/pic.jpg}
-    \vspace{0.2cm}  % Adjust space between image and text if needed
+    \vspace{0.2cm} 
     \\
     \small by XL
   \end{columns}
-  \blfootnote{\tiny Re: \cite{vaalmacost2018}. Notes: reference here is just for test}  
+  \blfootnote{\tiny Re: \cite{vaalmacost2018}. Notes: }  
 \end{frame}
 %--------------------
 \section{Topic}
@@ -149,7 +131,7 @@ Email: xl24@fsu.edu\\
   \begin{columns}[t]       % Top-aligned columns
     \column{0.5\textwidth}
         \begin{center}
-          \begin{minipage}{1\textwidth} % Adjust the width as needed
+          \begin{minipage}{1\textwidth} 
             \begin{block}{Advantages}
             \begin{itemize}
               \item 1
@@ -160,7 +142,7 @@ Email: xl24@fsu.edu\\
         \end{center}
     \column{0.5\textwidth}
         \begin{center}
-          \begin{minipage}{1\textwidth} % Adjust the width as needed
+          \begin{minipage}{1\textwidth} 
             \begin{alertblock}{Limitations}
             \begin{itemize}
               \item 2
@@ -171,7 +153,7 @@ Email: xl24@fsu.edu\\
   \end{columns}  
   \blfootnote{\tiny Notes:}  
 \end{frame}
-%-----------------------------------------------------------Section Conclude
+%-------------------------------------------------------
 \section{Conclusion and outlook}
 \begin{frame}  
 \frametitle{Conclusion and outlook}
@@ -180,14 +162,11 @@ Email: xl24@fsu.edu\\
   \item So \cmark, then \xmark
 \end{itemize}
 \end{frame}
-%-----------------------------------------------------------Section reference
+%---------------------------------------------------------
 \section{Reference}
-\begin{frame}[allowframebreaks]  % Automatically split into multiple frames if necessary
+\begin{frame}[allowframebreaks]  
   \frametitle{Reference}
-  % \vspace{0.2em}
-  % \vskip 0.3em  % Add vertical space between the frametitle and the reference list
-  % Adjust the spacing between bibliography entries
-  \setlength{\itemsep}{0.5em}  % Adjust this value to control the spacing between items
+  \setlength{\itemsep}{0.5em}  
   \printbibliography[title=References]  % Print reference list
   % \printbibliography[heading=bibintoc, title=References]  % Do not use bibintoc otherwise it will generate unnecessary content in the table of contents
 \end{frame}
