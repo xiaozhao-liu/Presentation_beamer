@@ -1,4 +1,4 @@
-# XL Beamer Template
+# XL Presentation Beamer Template
 
 A clean LaTeX Beamer template with a navy, blue, and teal color palette.
 
