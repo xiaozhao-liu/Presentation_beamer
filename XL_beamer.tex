@@ -1,0 +1,159 @@
+\documentclass[hyperref={bookmarks=false},aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+\usepackage{XLthemeBeamer}
+
+\newcommand{\cmark}{\textcolor{XLAccent}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{XLAlert}{\ding{55}}}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}%
+  \footnote{#1}%
+  \endgroup
+}
+\renewcommand{\footnotesep}{0.1em}
+
+\usepackage[backend=biber,style=nature,sorting=none,doi=true,url=false]{biblatex}
+\addbibresource{reference.bib}
+
+\title[Presentation Title]{Presentation Title}
+\subtitle{Subtitle or project description}
+\author[Presenter Name]{Presenter Name}
+\institute[Organization]{Department or Organization}
+\date[\today]{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\AtBeginSection[]{
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Motivation}
+  \begin{itemize}
+    \item Main problem or research question.
+    \item Key challenge or knowledge gap.
+    \item Objective of this presentation.
+  \end{itemize}
+  \blfootnote{\tiny \cite{vaalmacost2018}}
+\end{frame}
+
+\begin{frame}{Example Images}
+  \begin{columns}[c,totalwidth=\textwidth]
+    \column{0.48\textwidth}
+      \centering
+      \IfFileExists{./figures/SCUTPhoto.jpg}{%
+        \includegraphics[height=4.0cm]{./figures/SCUTPhoto.jpg}
+      }{%
+        \fbox{\parbox[c][4.0cm][c]{0.82\linewidth}{\centering figures/SCUTPhoto.jpg}}
+      }
+      \vspace{0.2cm}
+      
+      \small Image taken by Xiaozhao at SCUT campus
+    \column{0.48\textwidth}
+      \centering
+      \IfFileExists{./figures/SCUTPhoto.jpg}{%
+        \includegraphics[height=4.0cm]{./figures/SCUTPhoto.jpg}
+      }{%
+        \fbox{\parbox[c][4.0cm][c]{0.82\linewidth}{\centering figures/SCUTPhoto.jpg}}
+      }
+      \vspace{0.2cm}
+
+      \small Image taken by Xiaozhao at SCUT campus
+  \end{columns}
+\end{frame}
+
+\section{Approach}
+
+\begin{frame}{Approach}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Strategy}
+        \begin{itemize}
+          \item Step 1 or design principle.
+          \item Step 2 or workflow component.
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{exampleblock}{Expected Outcome}
+        \begin{itemize}
+          \item Main benefit.
+          \item Practical implication.
+        \end{itemize}
+      \end{exampleblock}
+  \end{columns}
+\end{frame}
+
+\section{Results}
+
+\begin{frame}{Representative Results}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \column{0.52\textwidth}
+      \begin{itemize}
+        \item Result 1: concise takeaway.
+        \item Result 2: concise takeaway.
+        \item Result 3: concise takeaway.
+      \end{itemize}
+    \column{0.42\textwidth}
+      \begin{block}{Figure}
+        \centering
+        \vspace{1.2cm}
+        Figure placeholder
+        \vspace{1.2cm}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Summary Table}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    Item & Status & Note \\
+    \midrule
+    Objective 1 & \cmark & Completed \\
+    Objective 2 & \cmark & Improved \\
+    Objective 3 & \xmark & In progress \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion and Outlook}
+  \begin{itemize}
+    \item Main conclusion.
+    \item Key supporting evidence.
+    \item Next step or future direction.
+  \end{itemize}
+\end{frame}
+
+\section{References}
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography[title=References]
+\end{frame}
+
+\end{document}

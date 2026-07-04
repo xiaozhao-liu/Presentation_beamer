@@ -1,6 +1,21 @@
-# FSU_beamer
-FSU beamer template using LaTeX
+# XL Beamer Template
 
-- This template is inspired by [Caltech-beamer-theme](https://github.com/jsh9/Caltech-beamer-theme)
-- .tex is the main file run using LaTeX (works in VS Code)
-- For other institutes or purposes, change the logo in the figures folder, and modify `beamerthemeFSU.sty` and `beamercolorthemeFSU.sty` if needed
+A clean LaTeX Beamer template with a navy, blue, and teal color palette.
+
+## Files
+
+- `XL_beamer.tex`: main presentation file
+- `XLthemeBeamer.sty`: layout, title page, frame title, and footer
+- `XLcolorBeamer.sty`: color palette and Beamer color settings
+- `reference.bib`: bibliography file used by `XL_beamer.tex`
+- `figures/Logo-University.png`: optional title-page logo
+- `figures/SCUTPhoto.jpg`: example image used in the image slide
+
+## Compile
+
+```bash
+pdflatex XL_beamer.tex
+biber XL_beamer
+pdflatex XL_beamer.tex
+pdflatex XL_beamer.tex
+```

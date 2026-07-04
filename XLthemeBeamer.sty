@@ -1,0 +1,76 @@
+\ProvidesPackage{XLthemeBeamer}
+\mode<presentation>
+
+\RequirePackage{XLcolorBeamer}
+\RequirePackage{tikz}
+
+\useinnertheme{circles}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large,series=\mdseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize}
+\setbeamerfont{footline}{size=\scriptsize}
+
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.95cm,dp=0.15cm,leftskip=0.55cm,rightskip=0.55cm]{frametitle}%
+    \vbox{}\vskip0.20cm%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[XLAccent,line width=1.1pt] ([xshift=0.55cm,yshift=-1.08cm]current page.north west) -- ([xshift=-0.55cm,yshift=-1.08cm]current page.north east);
+  \end{tikzpicture}%
+}
+
+\setbeamertemplate{title page}{%
+  \vspace*{0.85cm}
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0.1cm,rightskip=0.1cm]{title}
+    \usebeamerfont{title}\inserttitle\par
+  \end{beamercolorbox}
+  \vspace{0.25cm}
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0.1cm,rightskip=0.1cm]{subtitle}
+    \usebeamerfont{subtitle}\insertsubtitle\par
+  \end{beamercolorbox}
+  \vspace{0.75cm}
+  \begin{tikzpicture}
+    \draw[XLAccent,line width=2pt] (0,0) -- (2.2,0);
+  \end{tikzpicture}
+  \vspace{0.55cm}
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0.1cm,rightskip=0.1cm]{author}
+    \usebeamerfont{author}\insertauthor\par
+  \end{beamercolorbox}
+  \vspace{0.15cm}
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0.1cm,rightskip=0.1cm]{institute}
+    \usebeamerfont{institute}\insertinstitute\par
+  \end{beamercolorbox}
+  \vspace{0.15cm}
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0.1cm,rightskip=0.1cm]{date}
+    \usebeamerfont{date}\insertdate\par
+  \end{beamercolorbox}
+  \vfill
+  \IfFileExists{./figures/Logo-University.png}{%
+    \begin{flushright}
+      \includegraphics[height=1.15cm]{./figures/Logo-University.png}
+    \end{flushright}
+  }{}
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.78\paperwidth,ht=2.6ex,dp=1.2ex,leftskip=0.55cm]{footline}%
+      % Left side intentionally empty
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.22\paperwidth,ht=2.6ex,dp=1.2ex,rightskip=0.55cm plus1fil]{footline}%
+      \usebeamerfont{footline}\hfill\insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\mode<all>
